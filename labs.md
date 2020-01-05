@@ -5,23 +5,24 @@
 
 **Тема 2**. ANSI C
 
-Разработка интерпретатора.
+Разработка интерпретатора
 
-Промежуточная проверочная 
+*Промежуточная проверочная*
 
 **Тема 3**. C++
 
 В процессе (классы)
 
-Промежуточная проверочная 
+*Промежуточная проверочная* 
 
-Тема 4. Разработка модуля на [C-API Python](https://github.com/dm-fedorov/pm3sem/blob/master/c-api.md)
+**Тема 4**. Разработка модуля на [C-API Python](https://github.com/dm-fedorov/pm3sem/blob/master/c-api.md)
 
 здесь ссылка на Linux дистибутив (Debian) для создания модуля 
 
-Тема 5. [Оптимизация с помощью Numba, Cython, PyPy](https://github.com/dm-fedorov/pm3sem/blob/master/High-Performance%20Computing.ipynb):
+**Тема 5**. [Оптимизация с помощью Numba, Cython, PyPy](https://github.com/dm-fedorov/pm3sem/blob/master/High-Performance%20Computing.ipynb):
 
 - на примере существующего проекта (курсовой работы);
 - профилирование;
 - оптимизация.
 
+**ЭКЗАМЕН**
