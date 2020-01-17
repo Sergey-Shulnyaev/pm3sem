@@ -2,17 +2,13 @@
 
 **Тема 1**. ANSI C
 
-*Промежуточная проверочная*
-
-Письменный тест на знание языка С.
+Практические работы на занятиях. 
 
 **Тема 2**. 
 
-Разработка интерпретатора на основе стека.
+Разработка интерпретатора на основе стека: вычисление арифметических выражений.
 
-- [Virtual machine in C](https://blog.felixangell.com/virtual-machine-in-c), [гит](https://github.com/felixangell/mac)
-
-- [Learn C and build your own programming language in 1000 lines of code!](http://www.buildyourownlisp.com/)
+ссылка на книгу с алгоритмом
 
 **Тема 3**. Разработка модуля на [C-API Python](https://github.com/dm-fedorov/pm3sem/blob/master/c-api.md)
 
@@ -24,6 +20,6 @@
 - профилирование;
 - оптимизация.
 
-**ЭКЗАМЕН**
+**ЭКЗАМЕН по языку Си**
 
-ДЗ на ЛЕТО: Язык С++ на лето [по книге А.В. Столярова](http://www.stolyarov.info/books/pdf/cppintro5.pdf)
+ДЗ на ЛЕТО: язык С++ в рамках [книги А.В. Столярова](http://www.stolyarov.info/books/pdf/cppintro5.pdf)

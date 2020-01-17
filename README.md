@@ -5,10 +5,13 @@
 
 ### Темы занятий:
 
-**Тема 1**. [Устройство виртуальной машины Python](https://github.com/dm-fedorov/pm3sem/blob/master/%D0%9F%D1%80%D0%BE%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BF%D1%80%D0%B5%D1%82%D0%B0%D1%82%D0%BE%D1%80%20Python.ipynb)
+**Тема 1**. [ANSI C](https://github.com/dm-fedorov/c_basic)
 
+[Зачем изучать язык С?](http://acm.mipt.ru/twiki/bin/view/Cintro/ReasonToLearnC)
 
-#### Материалы к теме 1:
+**Тема 2**. [Устройство виртуальной машины Python](https://github.com/dm-fedorov/pm3sem/blob/master/%D0%9F%D1%80%D0%BE%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BF%D1%80%D0%B5%D1%82%D0%B0%D1%82%D0%BE%D1%80%20Python.ipynb)
+
+#### Материалы к теме 2:
 
 - Allison Kaptur. [A Python Interpreter Written in Python](https://www.aosabook.org/en/500L/a-python-interpreter-written-in-python.html)
 
@@ -24,6 +27,10 @@
 
 - [Let’s Build A Simple Interpreter. Part 1](https://ruslanspivak.com/lsbasi-part1/)
 
+- [Virtual machine in C](https://blog.felixangell.com/virtual-machine-in-c), [гит](https://github.com/felixangell/mac)
+
+- [Learn C and build your own programming language in 1000 lines of code!](http://www.buildyourownlisp.com/)
+
 - [CPython internals: A ten-hour codewalk through the Python interpreter source code](https://www.youtube.com/playlist?list=PLzV58Zm8FuBL6OAv1Yu6AwXZrnsFbbR0S)
 
 - [Memory management in Python](https://rushter.com/blog/python-memory-managment/)
@@ -36,20 +43,13 @@
 
 - [Peter Goldsborough. Disassembling Python Bytecode](http://www.goldsborough.me/python/low-level/2016/10/04/00-31-30-disassembling_python_bytecode/)
 
+**Тема 3**. [C-API Python](https://github.com/dm-fedorov/pm3sem/blob/master/c-api.md)
 
-**Тема 2**. [ANSI C](https://github.com/dm-fedorov/c_basic)
+**Тема 4**. [Оптимизация с помощью Numba, PyPy, Cython](https://github.com/dm-fedorov/pm3sem/blob/master/High-Performance%20Computing.ipynb)
 
-[Зачем изучать язык С?](http://acm.mipt.ru/twiki/bin/view/Cintro/ReasonToLearnC)
-
-**Тема 3**. [C++](https://github.com/dm-fedorov/c_basic)
-
-**Тема 4**. [C-API Python](https://github.com/dm-fedorov/pm3sem/blob/master/c-api.md)
-
-**Тема 5**. [Оптимизация с помощью Numba, PyPy, Cython](https://github.com/dm-fedorov/pm3sem/blob/master/High-Performance%20Computing.ipynb)
+#### Материалы к теме 4:
 
 - [TimeComplexity](https://wiki.python.org/moin/TimeComplexity)
-
-#### Материалы к теме 5:
 
 - [Что делать, если ваш код на Python тормозит / Григорий Бакунов (Яндекс)](https://www.youtube.com/watch?time_continue=1042&v=77B2-Pk1fls)
 
