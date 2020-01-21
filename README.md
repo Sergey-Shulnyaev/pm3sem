@@ -35,6 +35,8 @@
 
 - [Memory management in Python](https://rushter.com/blog/python-memory-managment/)
 
+- [Concrete Objects Layer](https://docs.python.org/3/c-api/concrete.html)
+
 - [James Bennett - A Bit about Bytes: Understanding Python Bytecode - PyCon 2018](https://www.youtube.com/watch?v=cSSpnq362Bk)
 
 - [Scott Sanderson, Joe Jevnik - Playing with Python Bytecode - PyCon 2016](https://www.youtube.com/watch?v=mxjv9KqzwjI)
