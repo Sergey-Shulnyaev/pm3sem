@@ -1,5 +1,4 @@
-
-Лабораторная работа 3. Оптимизация кода на языке Python
+`Лабораторная работа 3. Оптимизация кода на языке Python`
 
 - на примере существующего проекта (курсовой работы);
 - профилирование;
@@ -7,7 +6,7 @@
 
 #### Дополнительные материалы
 
-- Оптимизация с помощью Numba, Cython, PyPy](https://github.com/dm-fedorov/pm3sem/blob/master/High-Performance%20Computing.ipynb):
+- [Оптимизация с помощью Numba, Cython, PyPy](https://github.com/dm-fedorov/pm3sem/blob/master/High-Performance%20Computing.ipynb)
 
 - [TimeComplexity](https://wiki.python.org/moin/TimeComplexity)
 
