@@ -30,7 +30,7 @@
 
 [Описание лаб работы и доп материалы](https://github.com/dm-fedorov/pm3sem/blob/master/lab3.md)
 
-`**ЭКЗАМЕН в виде теста**`
+**`ЭКЗАМЕН в виде теста`**
 
 `ДЗ на ЛЕТО`: язык С++ в рамках [книги А.В. Столярова](http://www.stolyarov.info/books/pdf/cppintro5.pdf)
 
