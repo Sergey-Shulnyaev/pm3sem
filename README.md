@@ -14,21 +14,15 @@
 
 **Тема 2**. [Устройство виртуальной машины Python](https://github.com/dm-fedorov/pm3sem/blob/master/%D0%9F%D1%80%D0%BE%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BF%D1%80%D0%B5%D1%82%D0%B0%D1%82%D0%BE%D1%80%20Python.ipynb)
 
-`Лабораторная работа 1. Пишем интерпретатор языка ассемблера`
-
-[Описание лаб работы и доп материалы](https://github.com/dm-fedorov/pm3sem/blob/master/lab1.md)
+[`Лабораторная работа 1. Пишем интерпретатор языка ассемблера`](https://github.com/dm-fedorov/pm3sem/blob/master/lab1.md)
 
 **Тема 3**. [C-API Python](https://github.com/dm-fedorov/pm3sem/blob/master/c-api.md)
 
-`Лабораторная работа 2. Пишем классический модуль для Python на Си`
-
-[Описание лаб работы и доп материалы](https://github.com/dm-fedorov/pm3sem/blob/master/lab2.md)
+[`Лабораторная работа 2. Пишем классический модуль для Python на Си`](https://github.com/dm-fedorov/pm3sem/blob/master/lab2.md)
 
 **Тема 4**. [Оптимизация с помощью Numba, PyPy, Cython](https://github.com/dm-fedorov/pm3sem/blob/master/High-Performance%20Computing.ipynb)
 
-`Лабораторная работа 3. Оптимизируем код на Python`
-
-[Описание лаб работы и доп материалы](https://github.com/dm-fedorov/pm3sem/blob/master/lab3.md)
+[`Лабораторная работа 3. Оптимизируем код на Python`](https://github.com/dm-fedorov/pm3sem/blob/master/lab3.md)
 
 **`ЭКЗАМЕН в виде теста`**
 
