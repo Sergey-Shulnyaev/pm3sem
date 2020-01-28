@@ -6,9 +6,10 @@
 ### Темы занятий:
 
 **Тема 1**. ANSI C
-- [Зачем изучать язык С?](http://acm.mipt.ru/twiki/bin/view/Cintro/ReasonToLearnC)
-- [Репозиторий с заданиями и материалами по C](https://github.com/dm-fedorov/c_basic)
-- [Примерный перечень вопросов](https://github.com/dm-fedorov/c_basic/blob/master/%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B%20%D0%BF%D0%BE%20%D0%A1.md)
+- [История языка Си](https://habr.com/ru/post/114588/)
+- [Зачем изучать язык Си?](http://acm.mipt.ru/twiki/bin/view/Cintro/ReasonToLearnC)
+- [Репозиторий с заданиями и материалами по Cи](https://github.com/dm-fedorov/c_basic)
+- [Примерный перечень вопросов по Си](https://github.com/dm-fedorov/c_basic/blob/master/%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B%20%D0%BF%D0%BE%20%D0%A1.md)
 
 По этой теме много (очень много) практических заданий. 
 
