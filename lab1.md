@@ -2,11 +2,10 @@
 
 - ANSI C
 - исходные тексты загружаем в свой репозиторий
-- про оформление кода смотрим [тут](http://www.stolyarov.info/books/pdf/codestyle2.pdf)
 
 #### Дополнительные материалы
 
-- Книга про стек
+- [Книга про стек](https://drive.google.com/file/d/1qDuJEO3xEeNpy7b6RoVyV0COb9HYN45B/view?usp=sharing)
 
 - Allison Kaptur. [A Python Interpreter Written in Python](https://www.aosabook.org/en/500L/a-python-interpreter-written-in-python.html)
 
