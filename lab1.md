@@ -13,7 +13,7 @@
 
 - [Inside The Python Virtual Machine](https://leanpub.com/insidethepythonvirtualmachine/read)
 
-- [Исходный код Python](https://github.com/python/cpython/tree/master/Python)
+- [Как в Python реализованы очень длинные числа типа integer?](https://habr.com/ru/company/otus/blog/489258/)
 
 - [Python’s Innards: Hello, ceval.c! (2010)](https://tech.blog.aknin.name/category/my-projects/pythons-innards/)
 
