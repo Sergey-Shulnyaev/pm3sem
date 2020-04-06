@@ -15,9 +15,8 @@
 
 [`Лабораторная работа 1. Пишем интерпретатор языка ассемблера`](https://github.com/dm-fedorov/pm3sem/blob/master/lab1.md)
 
-**Тема 3**. [C-API Python](https://github.com/dm-fedorov/pm3sem/blob/master/c-api.md)
+**Тема 3**. Лабораторная работа 2. Разработка классического модуля Python на языке Си
 
-[`Лабораторная работа 2. Пишем классический модуль для Python на Си`](https://github.com/dm-fedorov/pm3sem/blob/master/lab2.md)
 
 **Тема 4**. [Оптимизация с помощью Numba, PyPy, Cython](https://github.com/dm-fedorov/pm3sem/blob/master/High-Performance%20Computing.ipynb)
 

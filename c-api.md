@@ -636,7 +636,6 @@ test_fputs.py                                                 [100%]
 Для более подробного ознакомления ознакомьтесь с разделом [Начало работы с тестированием в Python](https://realpython.com/python-testing/).
 
 
-
 [Менеджер памяти](https://habr.com/en/company/ruvds/blog/441568/)
 
 [Pandas](https://habr.com/en/company/ruvds/blog/442516/)
@@ -646,8 +645,3 @@ test_fputs.py                                                 [100%]
 [Реализация целого типа в CPython](https://habr.com/ru/post/455114/)
 
 [Реализация строкового типа в CPython](https://habr.com/ru/post/480324/)
-
-
-https://github.com/foobar167/junkyard/tree/master/co-occurrence_matrix/C_extension_for_Python
-
-[Прототип лабораторной работы](https://docs.google.com/document/d/1lXbsgWJUiGKM8jn_npiei0vVjDZwJsC7xcgp6W7Q_ss/edit)
