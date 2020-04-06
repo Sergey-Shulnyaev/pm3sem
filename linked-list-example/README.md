@@ -203,17 +203,17 @@ my_plus.plus(1,100)
 
 если будет ошибка: *Unable to find `vcvarsall.bat`*, это значит, что у вас нет нужной версии `visual studio`, нужную версию можно увидеть при запуске Python (правый столбик)
 
-Visual C++ 4.x                 MSC_VER=1000
-Visual C++ 5                   MSC_VER=1100
-Visual C++ 6                   MSC_VER=1200
-Visual C++ .NET                MSC_VER=1300
-Visual C++ .NET 2003           MSC_VER=1310
-Visual C++ 2005  (8.0)         MSC_VER=1400
-Visual C++ 2008  (9.0)         MSC_VER=1500
-Visual C++ 2010 (10.0)         MSC_VER=1600
-Visual C++ 2012 (11.0)         MSC_VER=1700
-Visual C++ 2013 (12.0)         MSC_VER=1800
-Visual C++ 2015 (14.0)         MSC_VER=1900
+- Visual C++ 4.x                 MSC_VER=1000
+- Visual C++ 5                   MSC_VER=1100
+- Visual C++ 6                   MSC_VER=1200
+- Visual C++ .NET                MSC_VER=1300
+- Visual C++ .NET 2003           MSC_VER=1310
+- Visual C++ 2005  (8.0)         MSC_VER=1400
+- Visual C++ 2008  (9.0)         MSC_VER=1500
+- Visual C++ 2010 (10.0)         MSC_VER=1600
+- Visual C++ 2012 (11.0)         MSC_VER=1700
+- Visual C++ 2013 (12.0)         MSC_VER=1800
+- Visual C++ 2015 (14.0)         MSC_VER=1900
 
 ### Создаем свой модуль с классами (структурами)
 
