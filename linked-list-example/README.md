@@ -129,15 +129,15 @@ PyArg_ParseTuple(args, "i", &some_int) // аналогично для числа
 
 ```C
 static PyMethodDef ownmod_methods[] = {
-{
+  {
     "plus", // название функции внутри python
     py_plus, // функция C
     METH_VARARGS, // макрос, поясняющий, что функция у нас с аргументами
     "plus function" // документация для функции внутри python
-},
-{ NULL, NULL, 0, NULL } 
-// так называемый sentiel. Сколько бы элементов структуры у вас не было,
-// этот нулевой элемент должен быть всегда, и при этом быть последним.
+  },
+  { NULL, NULL, 0, NULL } 
+  // так называемый sentiel. Сколько бы элементов структуры у вас не было,
+  // этот нулевой элемент должен быть всегда, и при этом быть последним.
 };
 ```
 
@@ -239,9 +239,11 @@ my_plus.plus(1,100)
 
 // элемент списка
 typedef struct Node {
-/* PyObject_HEAD - макрос, общий для всех встроенных объектов, добавляет 
-счетчик количества указателей на объект и указатель на родительский тип объекта
-раскрывается в PyObject ob_base */
+        /* 
+	   PyObject_HEAD - макрос, общий для всех встроенных объектов, добавляет 
+           счетчик количества указателей на объект и указатель на родительский тип объекта
+           раскрывается в PyObject ob_base 
+	 */
 	PyObject_HEAD
         int value;        // значение хранящееся в Node
         struct Node *next; // указатель на следующий элемент
@@ -282,13 +284,12 @@ static int linked_list_init(linked_list *self, PyObject *args, PyObject *kwds);
 static Node* get_last(linked_list *self)
 {
     self->cur=self->first;
-    if(self->first==NULL){
+    if(self->first==NULL)
         return NULL;
-    }
-
-    while(self->cur->next){
+	
+    while(self->cur->next)
         self->cur=self->cur->next;
-    }
+    
     return self->cur;
 }
 
@@ -314,9 +315,10 @@ static PyObject* add_first(linked_list *self, PyObject *args, PyObject *kwds)
 {
     int data;
     Node *node=(Node*)malloc(sizeof(Node));
-    if(!PyArg_ParseTuple(args, "i", &data)){
+    
+    if(!PyArg_ParseTuple(args, "i", &data))
         return NULL;
-    }
+    
     node->next = self->first;
     node->value = data;
     self->first = node;
@@ -325,7 +327,9 @@ static PyObject* add_first(linked_list *self, PyObject *args, PyObject *kwds)
 }
 
 /*
-Все методы, к которым можно обратиться напрямую, должны возвращать PyObject*. Например, к методу get_last нельзя обратиться напрямую (x.show() – можно, x.get_last() – ошибка).
+Все методы, к которым можно обратиться напрямую, должны возвращать PyObject*. 
+Например, к методу get_last нельзя обратиться напрямую 
+(x.show() – можно, x.get_last() – ошибка).
 */
 
 static PyObject* add_last(linked_list *self, PyObject *args, PyObject *kwds)
@@ -333,9 +337,10 @@ static PyObject* add_last(linked_list *self, PyObject *args, PyObject *kwds)
     int data;
     Node *node=(Node*)malloc(sizeof(Node));
     Node *bufL=(Node*)malloc(sizeof(Node));
-    if(! PyArg_ParseTuple(args, "i", &data)){
+   
+    if(!PyArg_ParseTuple(args, "i", &data))
         return NULL;
-    }
+    
     node=get_last(self);
     bufL->value=data;
     bufL->next=NULL;
@@ -351,7 +356,7 @@ static PyObject* pop_first(linked_list *self)
     val=self->first->value;
     self->first=self->first->next;
     // значения возвращаются, только через Py_BuildValue()
-    return Py_BuildValue("i",val);
+    return Py_BuildValue("i", val);
 }
 
 /* METH_NOARGS – метод без аргументов, METH_VARARGS – метод с аргументами */
