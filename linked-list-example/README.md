@@ -100,7 +100,7 @@ PyMODINIT_FUNC PyInit_my_plus(void) {
 Теперь об аргументах: `self` и `args` - это обязательные аргументы функции.
 
 `self` - указатель на объект самого модуля, если данная функция принадлежит модулю, или указатель на объект, если это функция какого-либо класса.
-`args` - это кортеж (tuple) аргументов функции, переданный прямиком Python. Например, если вызвать `simple.plus(1, 3)`, то в этом случае args будет состоять из чисел `(1, 3)`.
+`args` - это кортеж (`tuple`) аргументов функции, переданный прямиком Python. Например, если вызвать `simple.plus(1, 3)`, то в этом случае args будет состоять из чисел `(1, 3)`.
 
 Перейдем к телу функции: объявляются три переменные, которые будут в дальнейшем использованы в функции `PyArg_ParseTuple`. Остановимся на ней подробнее. Она используется для обработки аргументов функции, и позволяет трансформировать типы данных Python в типы данных C. В качестве первого аргумента она принимает `PyObject`, который, по сути, является кортежем переданных функции аргументов, вторым - типы переменных, в которые мы хотим преобразовать наши аргументы. Далее идут переменные, в которые мы сохраняем преобразованные значения. Проверка в строке 6 нужна для того, чтобы проконтролировать, корректно ли отработала функция,и если нет, то сообщить об ошибке.
 Несколько примеров использования этой функции:
@@ -124,7 +124,8 @@ PyArg_ParseTuple(args, "i", &some_int) // аналогично для числа
 	Py_BuildValue("ss", "hello", "world")    ('hello', 'world')
 ```
 
-Теперь переходим к пояснению структуры, описывающий методы модуля. Такая структура должна обязательно быть у каждого модуля.
+Теперь переходим к пояснению структуры, описывающий методы модуля. 
+Такая структура должна обязательно быть у каждого модуля.
 
 ```C
 static PyMethodDef ownmod_methods[] = {
@@ -162,7 +163,7 @@ PyMODINIT_FUNC PyInit_my_plus(void)
     // создаем модуль
     m = PyModule_Create(&simple_module);
     // если все корректно, то эта проверка не проходит
-    if (m == NULL)
+    if(m == NULL)
         return NULL;
 
     return m;
@@ -177,14 +178,14 @@ from distutils.core import setup, Extension
 
 module1 = Extension(
 	'my_plus', # название модуля внутри Python
-	sources = ['plus.c'] # Исходные файлы модуля
+	 sources = ['plus.c'] # Исходные файлы модуля
 )
 
 setup(
 	name = 'my_plus', # название модуля (my_plus.__name__)
-	version = '1.1', # версия модуля
+	version = '1.1',  # версия модуля
 	description = 'Simple module', # описание модуля
-	ext_modules= [module1] # объекты типа Extension (мы объявили его выше)
+	ext_modules= [module1]    # объекты типа Extension (мы объявили его выше)
 )
 ```
 
@@ -202,7 +203,7 @@ my_plus.plus(1,100)
 >>> 101.0
 ```
 
-Для запуска на windows:
+Для запуска в ОС Windows:
 - Запустить консоль
 - Перейти в каталог с проектом
 - python setup.py install
@@ -238,18 +239,19 @@ my_plus.plus(1,100)
 
 // элемент списка
 typedef struct Node {
-/* PyObject_HEAD - макрос, общий для всех встроенных объектов, добавляет счетчик количества указателей на объект и указатель на родительский тип объекта
+/* PyObject_HEAD - макрос, общий для всех встроенных объектов, добавляет 
+счетчик количества указателей на объект и указатель на родительский тип объекта
 раскрывается в PyObject ob_base */
 	PyObject_HEAD
-int value; // значение хранящееся в Node
-struct Node *next; // указатель на следующий элемент
+        int value;        // значение хранящееся в Node
+        struct Node *next; // указатель на следующий элемент
 } Node;
 
 // сам список
 typedef struct linked_list{
-PyObject_HEAD
-Node *first; // указатель на первый элемент списка
-Node *cur; // указатель на буферный элемент
+     PyObject_HEAD
+     Node *first;   // указатель на первый элемент списка
+     Node *cur;     // указатель на буферный элемент
 } linked_list;
 
 // возвращает последний элемент списка
@@ -279,113 +281,119 @@ static int linked_list_init(linked_list *self, PyObject *args, PyObject *kwds);
 
 static Node* get_last(linked_list *self)
 {
-self->cur=self->first;
-if (self->first==NULL)
-{
-return NULL;
-}
-while (self->cur->next)
-{
-self->cur=self->cur->next;
-}
-return self->cur;
+    self->cur=self->first;
+    if(self->first==NULL){
+        return NULL;
+    }
+
+    while(self->cur->next){
+        self->cur=self->cur->next;
+    }
+    return self->cur;
 }
 
 static PyObject* show(linked_list *self)
 {
-self->cur=self->first;
-while(self->cur){
-printf("%d ",self->cur->value);
-self->cur=self->cur->next;
-}
-free(self->cur);
-/* Отсутствие Py_INCREF, может привести к Fatal Python error: deallocating None.
-return Py_None – объект None.
-*/
-Py_INCREF(Py_None);
-return Py_None;
+    self->cur=self->first;
+    while(self->cur){
+        printf("%d ",self->cur->value);
+        self->cur=self->cur->next;
+    }
+    free(self->cur);
+
+    /* 
+    Отсутствие Py_INCREF, может привести к Fatal Python error: deallocating None.
+    return Py_None – объект None.
+    */
+
+    Py_INCREF(Py_None);
+    return Py_None;
 }
 
 static PyObject* add_first(linked_list *self, PyObject *args, PyObject *kwds)
 {
-int data;
-Node *node=(Node*)malloc(sizeof(Node));
-if (! PyArg_ParseTuple(args, "i", &data)) {
-return NULL;
-}
-node->next = self->first;
-node->value = data;
-self->first = node;
-Py_INCREF(Py_None);
-return Py_None;
+    int data;
+    Node *node=(Node*)malloc(sizeof(Node));
+    if(!PyArg_ParseTuple(args, "i", &data)){
+        return NULL;
+    }
+    node->next = self->first;
+    node->value = data;
+    self->first = node;
+    Py_INCREF(Py_None);
+    return Py_None;
 }
 
-/*Все методы, к которым можно обратиться напрямую, должны возвращать PyObject*. Например, к методу get_last нельзя обратиться напрямую (x.show() – можно, x.get_last() – ошибка).*/
+/*
+Все методы, к которым можно обратиться напрямую, должны возвращать PyObject*. Например, к методу get_last нельзя обратиться напрямую (x.show() – можно, x.get_last() – ошибка).
+*/
 
 static PyObject* add_last(linked_list *self, PyObject *args, PyObject *kwds)
 {
-int data;
-Node *node=(Node*)malloc(sizeof(Node));
-Node *bufL=(Node*)malloc(sizeof(Node));
-if (! PyArg_ParseTuple(args, "i", &data)) {
-return NULL;
-}
-node=get_last(self);
-bufL->value=data;
-bufL->next=NULL;
-node->next=bufL;
-Py_INCREF(Py_None);
-return Py_None;
+    int data;
+    Node *node=(Node*)malloc(sizeof(Node));
+    Node *bufL=(Node*)malloc(sizeof(Node));
+    if(! PyArg_ParseTuple(args, "i", &data)){
+        return NULL;
+    }
+    node=get_last(self);
+    bufL->value=data;
+    bufL->next=NULL;
+    node->next=bufL;
+    Py_INCREF(Py_None);
+    return Py_None;
 }
 
 static PyObject* pop_first(linked_list *self)
 {
-int val=0;
-Node *node=(Node*)malloc(sizeof(Node));
-val=self->first->value;
-self->first=self->first->next;
-//значения возвращаются, только через Py_BuildValue()
-return Py_BuildValue("i",val);
+    int val=0;
+    Node *node=(Node*)malloc(sizeof(Node));
+    val=self->first->value;
+    self->first=self->first->next;
+    // значения возвращаются, только через Py_BuildValue()
+    return Py_BuildValue("i",val);
 }
 
 /* METH_NOARGS – метод без аргументов, METH_VARARGS – метод с аргументами */
 static PyMethodDef linked_list_methods[] = {
-{"get_last", (PyCFunction)get_last, METH_NOARGS,
-PyDoc_STR("pointer to the last element in linked list")},
-{"pop_first", (PyCFunction)pop_first, METH_NOARGS,
-PyDoc_STR("get value and delete the first element")},
-{"add_first", (PyCFunction)add_first, METH_VARARGS,
-PyDoc_STR("add first element")},
-{"add_last", (PyCFunction)add_last, METH_VARARGS,
-PyDoc_STR("add last element")},
-{"show", (PyCFunction)show, METH_NOARGS,
-PyDoc_STR("show all elements of linked list")},
-{NULL,	NULL},
+    {"get_last", (PyCFunction)get_last, METH_NOARGS,
+    PyDoc_STR("pointer to the last element in linked list")},
+    {"pop_first", (PyCFunction)pop_first, METH_NOARGS,
+    PyDoc_STR("get value and delete the first element")},
+    {"add_first", (PyCFunction)add_first, METH_VARARGS,
+    PyDoc_STR("add first element")},
+    {"add_last", (PyCFunction)add_last, METH_VARARGS,
+    PyDoc_STR("add last element")},
+    {"show", (PyCFunction)show, METH_NOARGS,
+    PyDoc_STR("show all elements of linked list")},
+    {NULL, NULL},
 };
 
 /* в данном примере конструктор не несет практической пользы, он здесь только как пример создания его */
 static int linked_list_init(linked_list *self, PyObject *args, PyObject *kwds)
 {
-return 0;
+    return 0;
 }
 
- // деструктор, здесь мы подчищаем память за собой
+// деструктор, здесь мы подчищаем память за собой
 static void
 linked_list_dealloc(linked_list* self)
 {
-	Py_XDECREF(self->first);
-	Py_XDECREF(self->cur);
-	Py_TYPE(self)->tp_free((PyObject*)self);
+    Py_XDECREF(self->first);
+    Py_XDECREF(self->cur);
+    Py_TYPE(self)->tp_free((PyObject*)self);
 }
  
 static PyTypeObject linked_list_Type = {
-	/* Everything about object */
-	PyVarObject_HEAD_INIT(NULL, 0)
-//tp_name – имя типа
-	"linked_list",         	/* tp_name */
-//tp_basicsize – размер объекта, если размер типа не изменяем
-	sizeof(linked_list), /* tp_basicsize */
-/*tp_itemsize – если размер типа изменяем, то размер объекта = tp_basicsize + N* tp_itemsize, где N – “длина” объекта.*/
+     /* Everything about object */
+     PyVarObject_HEAD_INIT(NULL, 0)
+     //tp_name – имя типа
+     "linked_list",         	/* tp_name */
+     //tp_basicsize – размер объекта, если размер типа не изменяем
+      sizeof(linked_list), /* tp_basicsize */
+      /*tp_itemsize – если размер типа изменяем, 
+      то размер объекта = tp_basicsize + N* tp_itemsize, где N – “длина” объекта.
+      */
     	0,                   	/* tp_itemsize */
 //tp_dealloc – деструктор
 	(destructor)linked_list_dealloc,                   	/* tp_dealloc */
@@ -404,7 +412,7 @@ static PyTypeObject linked_list_Type = {
 	0,                       /* tp_setattro */
 	0,                   	/* tp_as_buffer */
 	Py_TPFLAGS_DEFAULT,    	/* tp_flags */
-//tp_doc -строка документации
+        //tp_doc -строка документации
 	"List objects",       	/* tp_doc: test.Test.__doc__ */
 	0,                   	/* tp_traverse */
 	0,                       /* tp_clear */
@@ -412,7 +420,7 @@ static PyTypeObject linked_list_Type = {
 	0,                   	/* tp_weaklistoffset */
 	0,                   	/* tp_iter */
 	0,                   	/* tp_iternext */
-//tp_methods – указатель на структуру с методами класса
+       //tp_methods – указатель на структуру с методами класса
 	linked_list_methods,     	 /* tp_methods */
 	0,                   	/* tp_members */
 	0,                   	/* tp_getset */
@@ -421,7 +429,7 @@ static PyTypeObject linked_list_Type = {
 	0,                   	/* tp_descr_get */
 	0,                   	/* tp_descr_set */
 	0,                   	/* tp_dictoffset */
-//tp_init – указатель на конструктор
+       //tp_init – указатель на конструктор
 	(initproc)linked_list_init,   /* tp_init */
 	0,                   	/* tp_alloc */
 	0,                   	/* tp_new */
@@ -446,15 +454,17 @@ PyMODINIT_FUNC PyInit_Linked_List(void)
 	PyObject* m;
  
 	linked_list_Type.tp_new = PyType_GenericNew;
-	if (PyType_Ready(&linked_list_Type) < 0)
-    	return NULL;
+	if(PyType_Ready(&linked_list_Type) < 0)
+    	    return NULL;
  
 	m = PyModule_Create(&linked_list_module);
-	if (m == NULL)
-    	return NULL;
+	if(m == NULL)
+    	    return NULL;
+	
 	Py_INCREF(&linked_list_Type);
 	// x=Linked_List.Create() - так создается объект х класса Linked_List 
 	PyModule_AddObject(m, "Create", (PyObject *)&linked_list_Type);
+	
 	return m;
 }
 ```
