@@ -29,4 +29,5 @@ PyMODINIT_FUNC PyInit_ownmod() {
     if (m == NULL)
         return NULL;	
 
+   return m;
 }
